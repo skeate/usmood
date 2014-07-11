@@ -1,0 +1,28 @@
+{
+  "name": "usmood",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Jonathan Skeate <skeate@gmail.com>"
+  ],
+  "description": "analyzes the mood of the US via twitter data",
+  "keywords": [
+    "twitter",
+    "data",
+    "science",
+    "us",
+    "mood"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.4.9",
+    "jquery": "~2.1.1"
+  }
+}

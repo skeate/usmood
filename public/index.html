@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>US Twitter Mood Analyzer</title><style>
+
+      .state {
+        fill: #aaa;
+        stroke: #222;
+      }
+
+      .state-boundary {
+        fill: none;
+      }
+
+      body{
+        background: #222;
+        text-align: center;
+      }
+
+      .south{
+        fill: red;
+      }
+
+      .west{
+        fill: blue;
+        stroke: #aaa;
+      }
+
+      .hawaii, .alaska{
+        stroke: none;
+      }
+
+      .midwest{
+        fill: green;
+      }
+
+      .northeast{
+        fill: orange;
+      }
+
+    </style>
+  </head>
+  <body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/d3/d3.min.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

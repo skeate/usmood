@@ -1,0 +1,25 @@
+{
+  "name": "usmood",
+  "version": "0.0.0",
+  "description": "analyzes the mood of the US via twitter data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
+  "keywords": [
+    "twitter",
+    "us",
+    "mood"
+  ],
+  "author": "Jonathan Skeate",
+  "license": "MIT",
+  "dependencies": {
+    "oauth": "^0.9.12",
+    "socket.io": "^1.0.6",
+    "express": "^4.5.0",
+    "twitter": "^0.2.9",
+    "geojson-utils": "^1.1.0",
+    "bower": "^1.3.7"
+  }
+}

@@ -1,0 +1,5 @@
+config.js
+.tern-project
+mapgen/
+node_modules/
+public/lib/
