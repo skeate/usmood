@@ -1,4 +1,5 @@
 var twitter = require('twitter');
+var sentiments = require('./afinn-111-words-only');
 var fs = require('fs');
 var express = require('express');
 var app = express();
@@ -16,18 +17,6 @@ var twit = new twitter({
   access_token_key: process.env.token_key,
   access_token_secret: process.env.token_secret
 });
-
-// read in sentiment data
-var sentiments = (function(){
-  var file = fs.readFileSync('./afinn-111-words-only.txt', {encoding: 'utf8'});
-  var lines = file.split('\n');
-  var sentiments = {};
-  lines.forEach(function(line){
-    var splitline = line.split('\t');
-    sentiments[splitline[0]] = parseInt(splitline[1], 10);
-  });
-  return sentiments;
-})();
 
 function toLower(word){ return word.toLowerCase(); }
 
