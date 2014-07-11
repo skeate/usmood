@@ -60,6 +60,8 @@ twit.stream('filter', twitter_filters, function(stream){
   });
 });
 
-http.listen(80, function(){
-  console.log('listening on 80');
+var port = Number(process.env.PORT || 8000);
+
+http.listen(port, function(){
+  console.log('listening on '+port);
 });
