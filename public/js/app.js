@@ -42,10 +42,12 @@ d3.json("/data/states4.json", function(error, us) {
                   .attr('cx', coords[0])
                   .attr('cy', coords[1])
                   .attr('r', 5)
+                  .attr('opacity', 1)
                   .attr('style', 'fill: '+get_color(tweet.sentiment));
     ping.transition()
-        .attr('r', 500)
-        .duration(1500);
+        .attr('r', 50)
+        .attr('opacity', 0)
+        .duration(1000);
     setTimeout(function(){
       dot.remove();
       ping.remove();
