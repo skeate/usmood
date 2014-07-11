@@ -1,4 +1,4 @@
-exports = {
+var sentiments = {
   "abandon": -2,
   "abandoned": -2,
   "abandons": -2,
@@ -2461,4 +2461,27 @@ exports = {
   "zealot": -2,
   "zealots": -2,
   "zealous": 2
+};
+
+function toLower(word){ return word.toLowerCase(); }
+
+/**
+ * @param {string} sentence
+ */
+exports.calculate = function(sentence){
+  var words, sentiment, matched_words;
+  try{
+    words = sentence.match(/[\w-']+/g).map(toLower);
+    sentiment = 0;
+    matched_words = 0;
+    words.forEach(function(word){
+      if( sentiments.hasOwnProperty(word) ){
+        sentiment += sentiments[word];
+        matched_words++;
+      }
+    });
+    return sentiment / matched_words;
+  } catch (ex){
+    return 0;
+  }
 }

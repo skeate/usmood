@@ -1,5 +1,5 @@
+var sentiment = require('./afinn-111-words-only');
 var twitter = require('twitter');
-var sentiments = require('./afinn-111-words-only');
 var fs = require('fs');
 var express = require('express');
 var app = express();
@@ -18,29 +18,6 @@ var twit = new twitter({
   access_token_secret: process.env.token_secret
 });
 
-function toLower(word){ return word.toLowerCase(); }
-
-/**
- * @param {string} tweet
- */
-function calculate_sentiment(tweet){
-  var words, tweet_sentiment, matched_words;
-  try{
-    words = tweet.match(/[\w-']+/g).map(toLower);
-    tweet_sentiment = 0;
-    matched_words = 0;
-    words.forEach(function(word){
-      if( sentiments.hasOwnProperty(word) ){
-        tweet_sentiment += sentiments[word];
-        matched_words++;
-      }
-    });
-    return tweet_sentiment / matched_words;
-  } catch (ex){
-    return 0;
-  }
-}
-
 var twitter_filters = {
   locations: '-124.7625,24.5210,-66.9326,49.3845,' + // continental US
              '-179.1506,51.2097,-129.9795,71.4410,' + // Alaska
@@ -53,7 +30,7 @@ twit.stream('filter', twitter_filters, function(stream){
       // only interested in original tweets with geo data
       var relevant_data = {
         coordinates: data.coordinates,
-        sentiment: calculate_sentiment(data.text)
+        sentiment: sentiment.calculate(data.text)
       };
       io.emit('tweet', relevant_data);
     }
