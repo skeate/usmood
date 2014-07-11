@@ -504,7 +504,7 @@ exports = {
   "courageous": 2,
   "courteous": 2,
   "courtesy": 2,
-cover-up	-3
+  "cover-up":	-3,
   "coward": -2,
   "cowardly": -2,
   "coziness": 2,
@@ -1480,7 +1480,7 @@ cover-up	-3
   "lurks": -1,
   "mad": -3,
   "maddening": -3,
-made-up	-1
+  "made-up":	-1,
   "madly": -3,
   "madness": -3,
   "mandatory": -1,
@@ -1579,7 +1579,7 @@ made-up	-1
   "naive": -2,
   "nasty": -3,
   "natural": 1,
-naïve	-2
+  "naïve":	-2,
   "needy": -2,
   "negative": -2,
   "negativity": -2,
@@ -1622,7 +1622,7 @@ naïve	-2
   "offline": -1,
   "oks": 2,
   "ominous": 3,
-once-in-a-lifetime	3
+  "once-in-a-lifetime":	3,
   "opportunities": 2,
   "opportunity": 2,
   "oppressed": -2,
@@ -1972,8 +1972,8 @@ once-in-a-lifetime	3
   "sedition": -2,
   "seditious": -2,
   "seduced": -1,
-self-confident	2
-self-deluded	-2
+  "self-confident": 2,
+  "self-deluded": -2,
   "selfish": -3,
   "selfishness": -3,
   "sentence": -2,
@@ -1999,8 +1999,8 @@ self-deluded	-2
   "shocking": -2,
   "shocks": -2,
   "shoot": -1,
-short-sighted	-2
-short-sightedness	-2
+  "short-sighted": -2,
+  "short-sightedness": -2,
   "shortage": -2,
   "shortages": -2,
   "shrew": -4,
@@ -2058,7 +2058,7 @@ short-sightedness	-2
   "solves": 1,
   "solving": 1,
   "somber": -2,
-son-of-a-bitch	-5
+  "son-of-a-bitch": -5,
   "soothe": 3,
   "soothed": 3,
   "soothing": 3,
