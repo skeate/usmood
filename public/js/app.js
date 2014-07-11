@@ -28,6 +28,29 @@ d3.json("/data/states4.json", function(error, us) {
       //.datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
       //.attr("class", "state-boundary")
       //.attr("d", path);
+  var socket = io();
+
+  socket.on('tweet', function(tweet){
+    var coords = projection(tweet.coordinates.coordinates);
+    var dot = svg.insert("circle")
+                 .attr('cx', coords[0])
+                 .attr('cy', coords[1])
+                 .attr('r', 5)
+                 .attr('class', 'tweet')
+                 .attr('style', 'fill: '+get_color(tweet.sentiment));
+    var ping = svg.insert("circle")
+                  .attr('cx', coords[0])
+                  .attr('cy', coords[1])
+                  .attr('r', 5)
+                  .attr('style', 'fill: '+get_color(tweet.sentiment));
+    ping.transition()
+        .attr('r', 500)
+        .duration(1500);
+    setTimeout(function(){
+      dot.remove();
+      ping.remove();
+    }, 5000);
+  });
 });
 d3.select(self.frameElement).style("height", height + "px");
 
@@ -35,13 +58,4 @@ function get_color(sentiment){
   return 'hsl('+(sentiment*12+60)+',100%, 50%)';
 }
 
-var socket = io();
-
-socket.on('tweet', function(tweet){
-  svg.insert("path")
-      .datum(tweet.coordinates)
-      .attr('class', 'tweet')
-      .attr('style', 'fill: '+get_color(tweet.sentiment))
-      .attr("d", path);
-});
 
