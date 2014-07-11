@@ -1,4 +1,3 @@
-var config = require('./config');
 var twitter = require('twitter');
 var fs = require('fs');
 var express = require('express');
@@ -12,10 +11,10 @@ app.use('/', express.static(__dirname + '/public'));
 
 // set up twitter connection
 var twit = new twitter({
-  consumer_key: config.twitterKey,
-  consumer_secret: config.twitterSecret,
-  access_token_key: config.tokenKey,
-  access_token_secret: config.tokenSecret
+  consumer_key: process.env.twitter_key,
+  consumer_secret: process.env.twitter_secret,
+  access_token_key: process.env.token_key,
+  access_token_secret: process.env.token_secret
 });
 
 // read in sentiment data
